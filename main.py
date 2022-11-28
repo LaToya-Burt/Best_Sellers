@@ -27,7 +27,10 @@ def create_book_list(data_list):
     # TODO: Write a function that will loop through data_list, and create a Book object for each list item
     # TODO: Then, add each Book item to book_list
     # TODO: Finally, return book_list for use in analysis questions!
-    return book_list
+    for book in data_list:
+        book_object = Book(book)
+        book_list.append(book_object)
+        return book_list
 
 
 def example_analysis(book_list):
@@ -38,7 +41,7 @@ def example_analysis(book_list):
     books_2016 = list(filter(lambda book: book.year == 2016, book_list))
     # Calculating the maximum price, and saving that book as highest_cost_book
     # Using max(), with Lambda function
-    highest_cost_book = max(books_2016, key=lambda book: book.price)
+    highest_cost_book = max(books_2016, key=lambda book: book.price)  # rather than max we can also use min
     # Print that book's name & price to terminal
     print(
         f"The most expensive book in 2016 was {highest_cost_book.name} with a price of {highest_cost_book.price}")
@@ -47,10 +50,19 @@ def example_analysis(book_list):
 def analysis_one(book_list):
     print("Analysis of which book had the lowest number of reviews in 2018")
 
+    books_2018= list(filter(lambda book: book.year == 2018, book_list))   
+
+    lowest_number_of_reviews = min(books_2018, key=lambda book: book.number_of_reviews)
+
+    print(f"The book that had the lowest number of reviews in 2018 was {lowest_number_of_reviews.name} with {lowest_number_of_reviews.number_of_reviews} reviews. ")
 
 def analysis_two(book_list):
     print("Analysis of which genre (fiction or non-fiction) has appeared the most in the top 50's list")
-
+    #make a list for fic and non fic and then see which list has the most 
+    fiction_genre = list(filter (lambda book: book.genre == 'fiction', book_list ))
+    #nonfiction_genre=
+    print=(len(fiction_genre))
+   # print=(len(nonfiction_genre))
 
 def analysis_three(book_list):
     print("Analysis of which book has appeared the most in the top 50's list, and how many times it has appeared")

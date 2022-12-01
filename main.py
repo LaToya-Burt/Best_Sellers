@@ -30,7 +30,7 @@ def create_book_list(data_list):
     for book in data_list:
         book_object = Book(book)
         book_list.append(book_object)
-        return book_list
+    return book_list
 
 
 def example_analysis(book_list):
@@ -58,15 +58,22 @@ def analysis_one(book_list):
 
 def analysis_two(book_list):
     print("Analysis of which genre (fiction or non-fiction) has appeared the most in the top 50's list")
-    #make a list for fic and non fic and then see which list has the most 
+     
     fiction_genre = list(filter (lambda book: book.genre == 'fiction', book_list ))
-    #nonfiction_genre=
-    print=(len(fiction_genre))
-   # print=(len(nonfiction_genre))
+    
+
+    #nonfiction_genre= list(filter(lambda book: book.genre == 'non-fiction', book_list))
+  
+
 
 def analysis_three(book_list):
     print("Analysis of which book has appeared the most in the top 50's list, and how many times it has appeared")
+    #print(len(book_list))
+    #myset=set(book_list)
+    #print(len(myset))
 
+
+    
 
 # BONUS USER STORIES:
 
